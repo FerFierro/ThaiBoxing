@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>VideosCarrusel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    
+     <link href="css/bootstrap3.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <!--para darle formato ami barra menu en cuestion del login Y ANIMACION AL TITULO MMA-->
+     <link href="css/docs.css" rel="stylesheet">
+     
+    
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    body{margin:10px;
+     padding-top: 40px}
+    /* Padding below the footer and lighter body text */
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* base para efecto carrousel */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .carousel-control {
+      background-color: transparent;
+      border: 0px;
+      font-size: 120px;
+      margin-top: 100px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    /*modifico mi seccion para mis fotos de carrousel*/
+    .carousel .item {
+      height: 640px;
+    }
+    /*modifico tamaño de mis fotos de carrousel*/
+    .carousel img {
+      min-width: 100%;
+      height: 640px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-bottom: 100px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-bottom: 40px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    
+  </head>
+
+ 
+<body class="pull_top">
+
+    <!-- NAVBAR
+    ================================================== -->
+    <!-- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper. -->
+    
+    <div class="navbar  navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">
+                <strong>VideosCarrusel</strong>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                   <li class="nav-header">
+                <a href="index3.html">Inicio</a>
+              </li>
+              <li class="">
+                <a href="Nosotros3.html">Nosotros</a>
+              </li>
+              <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Galeria
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="fotosCarrusel.html">Fotos</a></li>
+                            <li><a href="videosCarrusel.html">Videos</a></li>
+                            
+                        </ul>
+                    </li>
+              <li class="">
+                <a href="Contacto3.html">Contacto</a>
+              </li> 
+                </ul>
+                <form class="navbar-form pull-right">
+                            <input type="email" id="mail"  placeholder="correo@hotmail.com" required="required">
+                            <input class="span2" type="password" placeholder="Contraseña" required="required">
+                            <button type="submit" class="btn">Entrar</button>
+                        </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/3d0kIidpoT0" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen>
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>MMA Mi Deporte, Nunca Cambiare</h1>
+              <p class="lead">descripcion</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div>
+        <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/kW_BOTSkvrw?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>El caracter forga a la persona</h1>
+              <p class="lead"> .. </p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+        <div class="item">
+          <li class="panel4">
+               <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/KR_ZqRcqbZA" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Documental MMA</h1>
+              <p class="lead">Trabajo Duro</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/RtoFZHM_mgE?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>La ufc</h1>
+              <p class="lead">Qué tanto lo deseas</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div>
+           
+           <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/4_jFQLvUDAk?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>UFC 145: Defíneme</h1>
+              <p class="lead">¡ ES EL CAMINO AL EXITO !</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+         <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/Vj_4NKGRCaA" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>L</h1>
+              <p class="lead">motivacion mma</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+        <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/BOaYrGxPs2U?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>ciencia del deporte</h1>
+              <p class="lead">Mirame a los Ojos</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+        <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/1gbB6fW3TS4?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>No se trata de ganar </h1>
+              <p class="lead">Boyka vs Colombiano</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+        <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/arc2WUNkQf8?fs=1" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Tu contra todo </h1>
+              <p class="lead">RunFitners.com</p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+        <div class="item"><!--inicio transicion carrousel-->
+          <li class="panel3">
+              <iframe title="YouTube video player" width="1300" height="640" src="http://www.youtube.com/embed/gHQtDT9EETU" allowfullscreen webkitallowfullscreen mozallowfullscreen frameborder="0">
+               </iframe>
+          </li>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>ALMOGAVERS 5 PROMO</h1>
+              <p class="lead"></p>
+              <a class="btn btn-large btn-primary" href="#">ir a</a>
+            </div>
+          </div>
+        </div><!--fin transicion carrousel-->
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+  <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" src="img/uyhyu.jpg" height="226" width="223">
+          <h2>titulo</h2>
+          <p>comentarios sobre la imagen.</p>
+          <p><a class="btn" href="#">ver detalles &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="img/warm.png" height="500" width="965">
+          <h2>titulo</h2>
+          <p>comentarios sobre la imagen</p>
+          <p><a class="btn" href="#">ver detalles &raquo;</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <img class="img-circle" src="img/pantalones-danger-exclusive-talla-s-m-l-xl.jpg" height="260" width="220">
+          <h2>titulo</h2>
+          <p>comentarios de puro texto</p>
+          <p><a class="btn" href="#">ver detalles &raquo;</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/twitter.png" height="250" width="250">
+        <h2 class="featurette-heading">texto a resaltar <span class="muted">sub resaltado</span></h2>
+        <p class="lead">comentarios de puro texto</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" src="img/facebookusuarios.png" height="250" width="320">
+        <h2 class="featurette-heading">texto a resaltar<span class="muted">sub resaltado</span></h2>
+        <p class="lead">comentarios de puro texto</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-right" src="img/2000px-Logoyoutube2011favicon.png" height="250" width="250">
+        <h2 class="featurette-heading">texto a resaltar<span class="muted">subresaltado</span></h2>
+        <p class="lead">comentarios</p>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Regresar arriba</a></p>
+        <p>&copy; 2013 diseñador  &middot; <a href="#">Jose Angel Fierro Hernández</a> &middot; <a href="#">Terminos</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="js/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+    <script src="js/holder.js"></script>
+    <script src="css/google-code-prettify/prettify.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+  </body>
+</html>
